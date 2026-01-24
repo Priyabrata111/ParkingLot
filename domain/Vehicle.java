@@ -19,6 +19,22 @@ public class Vehicle {
     this.vehicleType = vehicleType;
   }
 
-  
-  
+  public UUID getId(){
+    return id;
+  }
+  public String getNumberPlate(){
+    return numberPlate;
+  }
+  public VehicleType getVehicleType(){
+    return vehicleType;
+  }
+
+  public String toString(){
+    return "Vehicle{" +
+                "id=" + id +
+                ", numberPlate='" + numberPlate + '\'' +
+                ", vehicleType=" + vehicleType +
+                '}';
+  }
+
 }
