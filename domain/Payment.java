@@ -47,5 +47,14 @@ public class Payment {
     return this.paymentStatus;
   }
 
+  public String toString(){
+    return "Payment{" +
+                "id=" + id +
+                ", ticketId=" + ticketId +
+                ", amount=" + amount +
+                ", gateway=" + gateWay +
+                ", status=" + paymentStatus +
+                '}';
+  }
   
 }

@@ -2,6 +2,8 @@ package main;
 
 
 import domain.Floor;
+import domain.Payment;
+import domain.Payment.PaymentGateWay;
 import domain.PricingRule;
 import domain.Slot;
 import domain.Ticket;
@@ -33,6 +35,11 @@ public class ParkingLot {
 
       PricingRule pr1 = new PricingRule(VehicleType.BIKE, 10, 5);
       System.out.println(pr1.toString());
+
+      Payment p1 = new Payment(t1.getId(), 200, PaymentGateWay.PAYPAL);
+      System.out.println(p1.toString());
+      p1.makePaymentSuccess();
+      System.out.println(p1.toString());
       
 
     }
