@@ -2,6 +2,7 @@ package main;
 
 
 import domain.Floor;
+import domain.PricingRule;
 import domain.Slot;
 import domain.Ticket;
 import domain.Vehicle;
@@ -29,6 +30,10 @@ public class ParkingLot {
 
       Ticket t1 = new Ticket(v1.getId(),s1.getId());
        System.out.println(t1.toString());
+
+      PricingRule pr1 = new PricingRule(VehicleType.BIKE, 10, 5);
+      System.out.println(pr1.toString());
+      
 
     }
     
