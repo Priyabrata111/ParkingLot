@@ -1,10 +1,11 @@
 package main;
 
 
+import domain.Floor;
+import domain.Slot;
+import domain.Ticket;
 import domain.Vehicle;
 import domain.Vehicle.VehicleType;
-import domain.Slot;
-import domain.Floor;
 
 public class ParkingLot {
   public static void main(String[] args) {
@@ -25,6 +26,9 @@ public class ParkingLot {
          f1.addSlot(new Slot(VehicleType.BIKE,12));
          System.out.println(f1.toString());
          System.out.println(f1.getAvaialbleSlotCount(Vehicle.VehicleType.BIKE));
+
+      Ticket t1 = new Ticket(v1.getId(),s1.getId());
+       System.out.println(t1.toString());
 
     }
     
