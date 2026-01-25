@@ -5,6 +5,7 @@ import domain.Floor;
 import domain.Payment;
 import domain.Payment.PaymentGateWay;
 import domain.PricingRule;
+import domain.Receipt;
 import domain.Slot;
 import domain.Ticket;
 import domain.Vehicle;
@@ -40,6 +41,11 @@ public class ParkingLot {
       System.out.println(p1.toString());
       p1.makePaymentSuccess();
       System.out.println(p1.toString());
+
+      Receipt r1 = new Receipt(t1.getId(), 200);
+      System.out.println(r1.toString());
+      r1.makePaymentSuccess();
+      System.out.println(r1.toString());
       
 
     }
