@@ -46,6 +46,23 @@ public class ParkingLot {
       System.out.println(r1.toString());
       r1.makePaymentSuccess();
       System.out.println(r1.toString());
+
+      Vehicle v2 = new Vehicle("wb987654321", VehicleType.CAR);
+
+        Slot s2 = new Slot(VehicleType.CAR,11);
+
+        System.out.println(v2.toString());
+        System.out.println(s2.toString());
+        System.out.println(s2.toString());
+
+        Floor f2 = new Floor(11);
+         System.out.println(f2.toString());
+         f2.addSlot(s2);
+         f2.addSlot(new Slot(VehicleType.BIKE,11));
+         System.out.println(f2.toString());
+         System.out.println(f2.getAvaialbleSlotCount(Vehicle.VehicleType.BIKE));
+
+     
       
 
     }
