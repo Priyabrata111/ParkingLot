@@ -10,6 +10,7 @@ import domain.Slot;
 import domain.Ticket;
 import domain.Vehicle;
 import domain.Vehicle.VehicleType;
+import repository.TicketRepository;
 
 public class ParkingLot {
   public static void main(String[] args) {
@@ -62,7 +63,11 @@ public class ParkingLot {
          System.out.println(f2.toString());
          System.out.println(f2.getAvaialbleSlotCount(Vehicle.VehicleType.BIKE));
 
-     
+     TicketRepository tRepo1 = new TicketRepository();
+     System.out.println("Ticket size = "+tRepo1.getSize());
+     tRepo1.save(t1);
+     tRepo1.save(new Ticket(v1.getId(),s1.getId()));
+     System.out.println("Ticket size = "+tRepo1.getSize());
       
 
     }

@@ -17,7 +17,7 @@ public class TicketRepository {
     return Optional.ofNullable(tickets.get(ticketId));
   }
   public List<Ticket> findActiveTickets(){
-    return tickets.values().stream().filter(Ticket::isActive).toList();
+    return tickets.values().stream().filter(Ticket::getActive).toList();
   }
   public void deactivateTicket(UUID ticketId){
     tickets.computeIfPresent(ticketId, (id,ticket)->{
@@ -27,6 +27,9 @@ public class TicketRepository {
   }
   public void clear(){
     tickets.clear();
+  }
+  public int getSize(){
+    return tickets.size();
   }
   
 }
