@@ -25,8 +25,8 @@ public class Slot {
   public boolean getOccupied(){
     return isOccupied;
   }
-  public void setOccupied(){
-    this.isOccupied = true;
+  public void setOccupied(boolean occupied){
+    this.isOccupied = occupied;
   }
   public String toString(){
     return "Slot { id = "+id+" slotType = "+slotType+" Floor Number = "+floorNumber+" is avaialble = "+isOccupied+" }";
