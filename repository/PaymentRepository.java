@@ -10,5 +10,9 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class PaymentRepository {
+  Map<UUID,Payment>payments = new ConcurrentHashMap<>();
+  Map<UUID,List<UUID>>ticketToPayments = new ConcurrentHashMap<>();
+
+
   
 }
