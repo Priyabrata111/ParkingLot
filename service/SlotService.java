@@ -26,5 +26,12 @@ public class SlotService {
 
   }
 
+  public void releaseSlot(UUID slotId){
+    System.out.println("[SYSTEM] : Relaesing Slot for "+slotId);
+    slotRepository.releaseSlot(slotId);
+    System.out.println("[SYSTEM] : Slot Released Successfully for "+slotId);
+
+  }
+
   
 }
