@@ -33,5 +33,11 @@ public class SlotService {
 
   }
 
-  
+  public Slot createSlot(Vehicle.VehicleType slotType,int floorNumber){
+    System.out.println("[SYSTEM] : creating slot for "+slotType+" @ floor = "+floorNumber);
+    Slot slot = new Slot(slotType,floorNumber);
+    slotRepository.saveSlot(slot);
+    System.out.println("[SYSTEM] : slot created & saved successfully for "+slotType+" @ floor = "+floorNumber);
+    return slot;
+  }
 }
