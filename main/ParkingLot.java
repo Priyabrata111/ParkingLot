@@ -10,7 +10,9 @@ import domain.Slot;
 import domain.Ticket;
 import domain.Vehicle;
 import domain.Vehicle.VehicleType;
+import repository.SlotRepository;
 import repository.TicketRepository;
+import service.SlotService;
 
 public class ParkingLot {
   public static void main(String[] args) {
@@ -22,7 +24,7 @@ public class ParkingLot {
 
         System.out.println(v1.toString());
         System.out.println(s1.toString());
-        s1.setOccupied();
+        s1.setOccupied(true);
         System.out.println(s1.toString());
 
         Floor f1 = new Floor(12);
@@ -68,6 +70,10 @@ public class ParkingLot {
      tRepo1.save(t1);
      tRepo1.save(new Ticket(v1.getId(),s1.getId()));
      System.out.println("Ticket size = "+tRepo1.getSize());
+
+     System.out.println("========== ACCESSING SERVICE LAYER ==============");
+     SlotService slotService = new SlotService(new SlotRepository());
+     slotService.createSlot(VehicleType.BIKE, 4);
       
 
     }
