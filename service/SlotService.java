@@ -40,4 +40,9 @@ public class SlotService {
     System.out.println("[SYSTEM] : slot created & saved successfully for "+slotType+" @ floor = "+floorNumber);
     return slot;
   }
+
+  public long getAvailableSlotCount(Vehicle.VehicleType vehicleType){
+    return slotRepository.findAvailableSlots(vehicleType).size();
+  }
 }
+
