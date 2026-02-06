@@ -20,5 +20,15 @@ public class TicketService {
     System.out.println("[SYSTEM] : Ticket Generation successfull for  "+ticket.getId());
     return ticket;
   }
+
+  public Optional<Ticket>getTicket(UUID ticketId){
+    System.out.println("[SYSTEM] : Returning valid Ticket "+ticketId);
+    return ticketRepository.findById(ticketId);
+  }
+
+  public void deactivateTicket(UUID ticketId){
+    System.out.println("Deactivating Ticket with ticketId = "+ticketId);
+    ticketRepository.deactivateTicket(ticketId);
+  }
   
 }
