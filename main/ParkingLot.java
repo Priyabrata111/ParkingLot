@@ -13,6 +13,7 @@ import domain.Vehicle.VehicleType;
 import repository.SlotRepository;
 import repository.TicketRepository;
 import service.SlotService;
+import service.TicketService;
 
 public class ParkingLot {
   public static void main(String[] args) {
@@ -74,7 +75,9 @@ public class ParkingLot {
      System.out.println("========== ACCESSING SERVICE LAYER ==============");
      SlotService slotService = new SlotService(new SlotRepository());
      slotService.createSlot(VehicleType.BIKE, 4);
-      
+     TicketService ticketService = new TicketService(new TicketRepository());
+     Ticket ticket1 = ticketService.generateTicket(v2, s2.getId());
+      ticket1.toString();
 
     }
     

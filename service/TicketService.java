@@ -14,20 +14,20 @@ public class TicketService {
   }
 
   public Ticket generateTicket(Vehicle vehicle, UUID slotId){
-    System.out.println("[SYSTEM] : Generating Ticket for "+vehicle.getNumberPlate());
+    System.out.println("[SERVICE] : Generating Ticket for "+vehicle.getNumberPlate());
     Ticket ticket = new Ticket(vehicle.getId(),slotId);
     ticketRepository.save(ticket);
-    System.out.println("[SYSTEM] : Ticket Generation successfull for  "+ticket.getId());
+    System.out.println("[SERVICE] : Ticket Generation successfull for  "+ticket.getId());
     return ticket;
   }
 
   public Optional<Ticket>getTicket(UUID ticketId){
-    System.out.println("[SYSTEM] : Returning valid Ticket "+ticketId);
+    System.out.println("[SERVICE] : Returning valid Ticket "+ticketId);
     return ticketRepository.findById(ticketId);
   }
 
   public void deactivateTicket(UUID ticketId){
-    System.out.println("Deactivating Ticket with ticketId = "+ticketId);
+    System.out.println("[SERVICE] : Deactivating Ticket with ticketId = "+ticketId);
     ticketRepository.deactivateTicket(ticketId);
   }
   

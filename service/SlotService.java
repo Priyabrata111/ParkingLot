@@ -27,17 +27,17 @@ public class SlotService {
   }
 
   public void releaseSlot(UUID slotId){
-    System.out.println("[SYSTEM] : Relaesing Slot for "+slotId);
+    System.out.println("[SERVICE] : Relaesing Slot for "+slotId);
     slotRepository.releaseSlot(slotId);
-    System.out.println("[SYSTEM] : Slot Released Successfully for "+slotId);
+    System.out.println("[SERVICE] : Slot Released Successfully for "+slotId);
 
   }
 
   public Slot createSlot(Vehicle.VehicleType slotType,int floorNumber){
-    System.out.println("[SYSTEM] : creating slot for "+slotType+" @ floor = "+floorNumber);
+    System.out.println("[SERVICE] : creating slot for "+slotType+" @ floor = "+floorNumber);
     Slot slot = new Slot(slotType,floorNumber);
     slotRepository.saveSlot(slot);
-    System.out.println("[SYSTEM] : slot created & saved successfully for "+slotType+" @ floor = "+floorNumber);
+    System.out.println("[SERVICE] : slot created & saved successfully for "+slotType+" @ floor = "+floorNumber);
     return slot;
   }
 
